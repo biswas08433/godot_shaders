@@ -2,9 +2,10 @@ shader_type canvas_item;
 
 uniform float strength: hint_range(0.0, 0.1, 0.001) = 0.08;
 uniform vec2 center = vec2(0.5, 0.5);
-uniform float abberation: hint_range(0.0, 1.0, 0.001) = 0.425;
-
 uniform float radius: hint_range(0.0, 1.0, 0.001) = 0.25;
+
+
+uniform float aberration: hint_range(0.0, 1.0, 0.001) = 0.425;
 uniform float width: hint_range(0.0, 0.1, 0.0001) = 0.04;
 uniform float feather: hint_range(0.0, 1.0, 0.001) = 0.135;
 
@@ -17,7 +18,7 @@ void fragment() {
 	vec2 offset = normalize(dist_center)*strength*mask;
 	vec2 biased_st = scaled_st - offset;
 	
-	vec2 abber_vec = offset*abberation*mask;
+	vec2 abber_vec = offset*aberration*mask;
 	
 	vec2 final_st = st*(1.0-mask) + biased_st*mask;
 

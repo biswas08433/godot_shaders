@@ -5,7 +5,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6eist"]
 shader = ExtResource( "2_x5d62" )
-shader_param/abberation = 0.425
+shader_param/aberration = null
 shader_param/center = Vector2(0.5, 0.5)
 shader_param/feather = 0.135
 shader_param/radius = 0.25
