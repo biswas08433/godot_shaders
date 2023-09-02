@@ -1,28 +1,38 @@
 [gd_scene load_steps=4 format=3 uid="uid://ddrfe1tcij8ei"]
 
-[ext_resource type="Texture2D" uid="uid://jvve6unw1g8q" path="res://icon.png" id="1_yrlrc"]
+[ext_resource type="Texture2D" uid="uid://jom731ly1a1e" path="res://water.jpg" id="1_kmp5f"]
 [ext_resource type="Shader" path="res://distortion.gdshader" id="2_x5d62"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6eist"]
-shader = ExtResource( "2_x5d62" )
-shader_param/aberration = null
-shader_param/center = Vector2(0.5, 0.5)
-shader_param/feather = 0.135
-shader_param/radius = 0.25
-shader_param/strength = 0.08
-shader_param/width = 0.04
+shader = ExtResource("2_x5d62")
+shader_parameter/strength = 0.08
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/radius = 0.25
+shader_parameter/aberration = 0.425
+shader_parameter/width = 0.04
+shader_parameter/feather = 0.135
 
-[node name="L02" type="Node2D"]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+[node name="L02" type="Control"]
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( "1_yrlrc" )
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_kmp5f")
 stretch_mode = 1
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-material = SubResource( "ShaderMaterial_6eist" )
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_6eist")
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

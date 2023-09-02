@@ -9,6 +9,8 @@ uniform float aberration: hint_range(0.0, 1.0, 0.001) = 0.425;
 uniform float width: hint_range(0.0, 0.1, 0.0001) = 0.04;
 uniform float feather: hint_range(0.0, 1.0, 0.001) = 0.135;
 
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
+
 void fragment() {
 	vec2 st = SCREEN_UV;
 	float aspect_ratio = SCREEN_PIXEL_SIZE.y/SCREEN_PIXEL_SIZE.x;
